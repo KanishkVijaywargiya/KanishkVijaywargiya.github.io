@@ -1,0 +1,33 @@
+.header{
+    /* 95VH ~ 95% OF THE VIEW PORT HEIGHT */
+    height: 80vh;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-tertiary, 0.8),
+        rgba($color-primary-medium, 0.8)) ,
+    url(../img/pic2.jpg);
+
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    
+    &__logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    &__logo{
+        height: 10rem;
+    }
+    
+    /* FOR TEXT POSITIONING */
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+}
+

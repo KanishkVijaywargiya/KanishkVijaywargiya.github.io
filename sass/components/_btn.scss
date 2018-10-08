@@ -1,0 +1,110 @@
+.btn{
+    &,
+    /* PSEUDO CLASS :~ :link */
+    &:link, 
+    &:visited{
+        text-transform: uppercase;
+        font-size: $default-font-size;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;  
+        border-radius: 10rem; 
+        position: relative;
+        font-size: $default-font-size;
+
+        // CHANGE FOR THE <button> ELEMENT
+        border: none;
+        cursor: pointer;
+
+        /* SHORTHAND FOR TRANSITION USED FOR ANIMATION*/
+        transition: all 0.1s;     
+    }
+
+    &:hover{
+        /* TO MOVE UP */
+        transform: translateY(-0.3rem);
+
+        /* SHADOW IN X DIRECTION, SHADOW IN Y DIRECTION, BLURR EFFECT */
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+
+        &::after{
+            /* SCALE IS SIMPLY USED TO INCREASE THE ELEMENT */
+            transform: scaleX(1.4) scaleY(1.6);
+    
+            /* THIS OPACITY IS USED FOR FADING OUT SOMETHING */
+            opacity: 0;
+        }    
+    }
+
+    &:active, &:focus{
+        outline: none;
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    }
+
+    &--white{
+        background-color: $color-white;
+        color: $color-grey-dark;
+    
+        &::after{
+            background-color: $color-white;
+        }
+    }
+
+    &--green{
+        background-color: $color-blue-shade-1;
+        color: $color-white;
+    
+        &::after{
+            background-color: $color-green-shade-1;
+        }
+    }
+
+
+    /* THIS IS USED TO PUT BEHIND THE BUTTON */
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        /* THIS IS USED TO FIND THE POSITION OF THE ELEMENTS WHEN ONE IS TOP OF ANOTHER*/
+        z-index: -1;
+        transition: all 0.4s;
+    }
+    
+    &--animated{
+        /* DELAYED BY 0.75s */
+        animation: moveInBottom 0.5s ease-out 0.75s;
+        /* IT AUTOMATICALY APPLIES THE STYLES TO 0% BEFORE THE ANIMATION STARTS */
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text{
+    &:link,
+    &:visited{
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.3rem;
+        font-size: $default-font-size;
+        transition: all 0.2s;
+    }
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+        transform: translate(-2px);
+    }
+    &:active{
+        box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
+        transform: translateY(0);
+    }
+}
+
